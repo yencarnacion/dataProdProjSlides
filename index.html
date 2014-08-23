@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Twitter-When</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Twitter-When">
+  <meta name="author" content="yencarnacion">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Twitter-When</h1>
+    <h2></h2>
+    <p>yencarnacion<br/>Coursera Developing Data Products Project</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Why Twitter-When</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Twitter when is useful for knowing when Twitter users that have twitted about a particular topic are most active and, therefore, likely to see other tweets on the subject.</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>How does it work</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Enter a word or phrase to be searched on Twitter.</li>
+<li>Adjust the number of Tweets to be retrieved using the slider. The minimum is 25 and the maximum is 100.</li>
+<li>Click the &quot;Twitter, when was that tweeted?&quot; button.</li>
+<li>Obtain your results. Histogram shows how many tweets there were per hour interval where each hour interval corresponds to a time using a range from 1 to 24 in UTC (Coordinated Universal Time)</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>An Image is Worth a Thousand Words</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>R Magic behind the scenes</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">interval&lt;-c(1, 1, 1, 1, 13, 13, 24, 24, 24, 24, 24, 24, 24)
+hist(interval, breaks=c(1:24), xaxt=&quot;n&quot;, 
+        main = &quot;Histogram of Tweets per hour&quot;, 
+        xlab= &quot;Hour (1 being 12:00 AM UTC, 24 being 11:00 PM UTC)&quot;)
+    axis(1, at=seq(1,24, by=2), labels=seq(1,24, by=2))
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
+
+<ol>
+<li>Twitter-When uses the TwitteR R package to connect to Twitter</li>
+<li>In converts it searches for a tweeted term</li>
+<li>It converts the results from the search to a vector with numbers 1 to 24 where each number represents a time Intervarl in UTC.  The end result of the vector is like the interval vector shown in the R code above.</li>
+<li>It plots the calculated time interval vector using a histogram plot</li>
+</ol>
+
+<h2>Where to Find Twitter-When</h2>
+
+<ol>
+<li> Currently hosted at <a href="http://yencarnacion.shinyapps.io/mine/">http://yencarnacion.shinyapps.io/mine/</a></li>
+<li> The Github repo is located at <a href="https://github.com/yencarnacion/dataProdProj">https://github.com/yencarnacion/dataProdProj</a></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Why Twitter-When'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='How does it work'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='An Image is Worth a Thousand Words'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='R Magic behind the scenes'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
