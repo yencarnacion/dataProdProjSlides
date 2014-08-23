@@ -42,12 +42,37 @@
 
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
-  <hgroup>
-    <h2>Why Twitter-When</h2>
-  </hgroup>
   <article data-timings="">
-    <ol>
-<li>Twitter when is useful for knowing when Twitter users that have twitted about a particular topic are most active and, therefore, likely to see other tweets on the subject.</li>
+    <!-- Limit image width and height -->
+
+<style type='text/css'>
+img {
+    max-height: 560px;
+    max-width: 964px;
+}
+</style>
+
+<!-- Center image on slide -->
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+
+<script type='text/javascript'>
+$(function() {
+    $("p:has(img)").addClass('centered');
+});
+</script>
+
+<h2>Why Twitter-When</h2>
+
+<ol>
+<li>Twitter-When is useful for knowing when Twitter users that have tweeted about a particular topic are most active and, therefore, likely to see other tweets on the subject.</li>
+</ol>
+
+<h2>Where to Find Twitter-When</h2>
+
+<ol>
+<li> Currently hosted at <a href="http://yencarnacion.shinyapps.io/mine/">http://yencarnacion.shinyapps.io/mine/</a></li>
+<li> The Github repo is located at <a href="https://github.com/yencarnacion/dataProdProj">https://github.com/yencarnacion/dataProdProj</a></li>
 </ol>
 
   </article>
@@ -56,15 +81,10 @@
 
 <slide class="" id="slide-2" style="background:;">
   <hgroup>
-    <h2>How does it work</h2>
+    <h2>An Image is Worth a Thousand Words</h2>
   </hgroup>
   <article data-timings="">
-    <ol>
-<li>Enter a word or phrase to be searched on Twitter.</li>
-<li>Adjust the number of Tweets to be retrieved using the slider. The minimum is 25 and the maximum is 100.</li>
-<li>Click the &quot;Twitter, when was that tweeted?&quot; button.</li>
-<li>Obtain your results. Histogram shows how many tweets there were per hour interval where each hour interval corresponds to a time using a range from 1 to 24 in UTC (Coordinated Universal Time)</li>
-</ol>
+    <p><img style = 'text-align: center' src = "assets/img/screenShot.png" height="240" width="677" /></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -72,10 +92,19 @@
 
 <slide class="" id="slide-3" style="background:;">
   <hgroup>
-    <h2>An Image is Worth a Thousand Words</h2>
+    <h2>How does it work</h2>
   </hgroup>
   <article data-timings="">
-    
+    <ol>
+<li>Enter a word or phrase to be searched on Twitter.</li>
+<li>Adjust the number of Tweets to be retrieved using the slider. The minimum is 25 and the maximum is 100.</li>
+<li>Click the &quot;Twitter, when was that tweeted?&quot; button.</li>
+<li>Twitter-When uses the TwitteR R package to connect to Twitter</li>
+<li>It searches for a tweeted term</li>
+<li>It converts the results from the search result &quot;created&quot; variable to a vector with numbers 1 to 24 where each number represents a time intervarl in UTC.  The end result of the vector is like the interval vector shown in the R code in the next slide.</li>
+<li>Obtain your results. It plots the calculated time interval vector using a histogram plot.  The histogram shows how many tweets there were per hour interval where each hour interval corresponds to a time using a range from 1 to 24 in UTC (Coordinated Universal Time)</li>
+</ol>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -92,21 +121,7 @@ hist(interval, breaks=c(1:24), xaxt=&quot;n&quot;,
     axis(1, at=seq(1,24, by=2), labels=seq(1,24, by=2))
 </code></pre>
 
-<p><img src="assets/fig/unnamed-chunk-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
-
-<ol>
-<li>Twitter-When uses the TwitteR R package to connect to Twitter</li>
-<li>In converts it searches for a tweeted term</li>
-<li>It converts the results from the search to a vector with numbers 1 to 24 where each number represents a time Intervarl in UTC.  The end result of the vector is like the interval vector shown in the R code above.</li>
-<li>It plots the calculated time interval vector using a histogram plot</li>
-</ol>
-
-<h2>Where to Find Twitter-When</h2>
-
-<ol>
-<li> Currently hosted at <a href="http://yencarnacion.shinyapps.io/mine/">http://yencarnacion.shinyapps.io/mine/</a></li>
-<li> The Github repo is located at <a href="https://github.com/yencarnacion/dataProdProj">https://github.com/yencarnacion/dataProdProj</a></li>
-</ol>
+<p><img src="assets/fig/unnamed-chunk-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" /></p>
 
   </article>
   <!-- Presenter Notes -->
@@ -118,19 +133,19 @@ hist(interval, breaks=c(1:24), xaxt=&quot;n&quot;,
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Why Twitter-When'>
+        data-slide=1 title=''>
          1
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='How does it work'>
+        data-slide=2 title='An Image is Worth a Thousand Words'>
          2
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='An Image is Worth a Thousand Words'>
+        data-slide=3 title='How does it work'>
          3
       </a>
     </li>
