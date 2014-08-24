@@ -1,0 +1,2 @@
+== Slidify Slides for Coursera Developing Data Products Course Project
+This repo contains the slidify slides related to the Twitter-When shiny app developed for the Coursera Developing Data Products Course Project.
